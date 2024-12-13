@@ -1,7 +1,8 @@
 #include "Tree.h"
 
 // function for creation a new node
-Node_t* newNode(Data_t data) {
+Node_t* newNode(Data_t data) 
+{
     Node_t* node = (Node_t*) calloc (sizeof(Node_t), 1);
     node->data = data;
     node->left = node->right = NULL;
@@ -10,7 +11,8 @@ Node_t* newNode(Data_t data) {
 }
 
 // function for deletion a tree
-void deleteTree(Node_t* root) {
+void deleteTree(Node_t* root) 
+{
     if (root == NULL) {
         return;
     }
@@ -22,7 +24,8 @@ void deleteTree(Node_t* root) {
 }
 
 // function for determination tree depth
-int treeDepth(Node_t* root) {
+int treeDepth(Node_t* root) 
+{
     if (root == NULL) {
         return 0;
     }
@@ -48,7 +51,8 @@ void inorderTraversal(Node_t* node) {
 }
 
 // function for a straight traversal (pre-order)
-void preorderTraversal(Node_t* node) {
+void preorderTraversal(Node_t* node) 
+{
     if (node == NULL) {
         return;
     }
@@ -62,7 +66,8 @@ void preorderTraversal(Node_t* node) {
 }
 
 // Function for a reversed traversal (post-order)
-void postorderTraversal(Node_t* node) {
+void postorderTraversal(Node_t* node) 
+{
     if (node == NULL) {
         return;
     }
@@ -77,7 +82,8 @@ void postorderTraversal(Node_t* node) {
 
 // function for node insertion in binary tree
 // returns tree with new node
-Node_t* insertNode(Node_t* root, int data) {
+Node_t* insertNode(Node_t* root, int data) 
+{
     if (root == NULL) {
         return newNode(data);
     }
@@ -90,14 +96,16 @@ Node_t* insertNode(Node_t* root, int data) {
 }
 
 // Function for search node with minimal tree element 
-Node_t* findMin(Node_t* root) {
+Node_t* findMin(Node_t* root) 
+{
     while (root->left != NULL) {
         root = root->left;
     }
     return root;
 }
 
-Node_t* findNode(Node_t* root, int value) {
+Node_t* findNode(Node_t* root, int value) 
+{
     if (root == NULL) {
         return NULL;
     }
@@ -113,7 +121,8 @@ Node_t* findNode(Node_t* root, int value) {
     }
 }
 
-Node_t* deleteNodeWithoutSubtree(Node_t* root, int data) {
+Node_t* deleteNodeWithoutSubtree(Node_t* root, int data) 
+{
     if (root == NULL) {
         return root;
     }
@@ -143,7 +152,8 @@ Node_t* deleteNodeWithoutSubtree(Node_t* root, int data) {
 }
 
 // Function for deletion node with it's subtree
-void deleteNodeWithSubtree(Node_t* root, int value) {
+void deleteNodeWithSubtree(Node_t* root, int value) 
+{
     if (root == NULL) {
         return;
     }
